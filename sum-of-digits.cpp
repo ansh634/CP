@@ -4,9 +4,6 @@ int main(){
     long long int a;
     cin>>a;
     string b = to_string(a);
-    if(a>=0){
-        cout<<b[0]<<endl;
-    }else{
-        cout<<b[1]<<endl;
-    }
+    long long int sum = b[0]-'0'+b[3]-'0';
+    cout<<sum<<endl;
 }

@@ -3,10 +3,9 @@ using namespace std;
 int main(){
     long long int a;
     cin>>a;
-    string b = to_string(a);
-    if(a>=0){
-        cout<<b[0]<<endl;
+    if(a%2==0){
+        cout<<a+2<<endl;
     }else{
-        cout<<b[1]<<endl;
+        cout<<a+1<<endl;
     }
 }
