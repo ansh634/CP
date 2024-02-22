@@ -1,12 +1,15 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+
 int main(){
-    long long int a;
-    cin>>a;
-    string b = to_string(a);
-    if(a>=0){
-        cout<<b[0]<<endl;
-    }else{
-        cout<<b[1]<<endl;
+    int t;
+    cin>>t;
+    vector<int> arr(t);
+    for(int i=0;i<t;i++){
+        cin>>arr[i];
+    }
+     sort(arr.begin(), arr.end(), greater<int>());
+     for(int i=0;i<t;i++){
+        cout<<arr[i]<<" ";
     }
 }
