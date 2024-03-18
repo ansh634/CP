@@ -14,11 +14,12 @@ int main() {
         for (int i = 0; i < n; i++)
             cin >> arr1[i];
         sort(arr.begin(),arr.end());
+        int j;
         sort(arr1.begin(),arr1.end());
-        for(int i=n-1;i>=0;i--){
-            for(int j=0;j<n;j++){
-                if(arr[i]>arr1[j]) count++;
-                if(arr[i]<arr1[j]) break;
+        for(int i=n-1, j=i;i>=0 && j>=0 ;--j){
+            if(arr[i]>arr1[j]){
+                count++;
+                --i;
             }
         }
         cout<<count<<endl;

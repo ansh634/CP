@@ -1,18 +1,12 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-int main() {
-    string s;
-    cin>>s;
-    vector<int> arr;
-    for(int i=0;i<s.size();i++){
-        if(s[i]!='+') arr.push_back(s[i]-'0');
+int main(){
+    for(int i=0;i<5;i++){
+        for(int j=1;j<=5-i;j++){
+            cout<<j;
+        }
+        cout<<endl;
     }
-    sort(arr.begin(),arr.end());
-    for(int i=0;i<arr.size();i++){
-        cout<<arr[i];
-        if(i!=arr.size()-1) cout<<"+";
-    }
-
-    return 0;
 }
