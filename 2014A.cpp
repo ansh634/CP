@@ -1,50 +1,46 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+
+
+typedef long long ll;
+#define MP make_pair
+#define FR(i,b) for(int i=0;i<b;i++)
+#define pb push_back
+#define int long long
+#define fors(n) for(int i=0;i<n;i++)
+const ll m1=1E9+7;
+#define INT_SIZE 30
+#define pi 3.14159265358979323846264338327950
+#define double long double
+
 using namespace std;
+const int m2=998244353;
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
 
-    int t;
-    cin >> t;
-    while (t--) {
-        int n, q;
-        cin >> n >> q;
+signed main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t=1;
+    cin>>t;
+    for(int i=0;i<t;i++){
+        int n,k;
+        cin>>n>>k;
         vector<int> a(n);
-
-        // Read target scores
-        for (int i = 0; i < n; i++) {
-            cin >> a[i];
+        for(int i=0;i<n;i++){
+            cin>>a[i];
         }
-
-        while (q--) {
-            int l, r;
-            cin >> l >> r;
-            l--; r--; // Convert to 0-based index
-
-            // Extract the relevant scores
-            vector<int> scores(a.begin() + l, a.begin() + r + 1);
-            sort(scores.rbegin(), scores.rend()); // Sort in descending order
-
-            long long robinScore = 0, sheriffScore = 0;
-
-            // Calculate scores for Robin and Sheriff
-            for (int i = 0; i < scores.size(); i++) {
-                if (i % 2 == 0) {
-                    robinScore += scores[i];
-                } else {
-                    sheriffScore += scores[i];
+        int s=0;
+        int cnt=0;
+        for(int i=0;i<n;i++){
+            if(a[i]==0){
+                if(s>0){
+                    s--;
+                    cnt++;
                 }
             }
-
-
-            if (sheriffScore >= robinScore) {
-                cout << "YES\n";
-            } else {
-                cout << "NO\n";
+            else if(a[i]>=k){
+                s+=a[i];
             }
         }
+        cout<<cnt<<'\n';
     }
-
-    return 0;
 }
