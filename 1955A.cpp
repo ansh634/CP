@@ -19,8 +19,6 @@ int main()
         int n, a, b;
         cin >> n >> a >> b;
 
-
-        cin>>
         cout << min(n * a, n / 2 * b + a * (n & 1)) << '\n';
     }
     return 0;
